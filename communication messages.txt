@@ -1,0 +1,46 @@
+1)Trigger Recognition on device
+accept number of vertices of a shape
+
+String Recieved: 	1;numberofvertices
+String Sent: 		1;path of file playing
+
+
+2)Get content of device
+send content of the device, like comma sepertated file names
+
+String Recieved:	2
+String Sent: 		2;{'content1': 'value1','content2': 'value2'}		(basically a comma seperated list of all files available)
+
+
+3)play content on device
+accept file name to be played
+
+String Recieved:	3;filepath;time					(this time should be 0 if media is not time based o has to be played from start)
+String Sent:		3;1 if file was played
+					3;0 if file could not be played (exception generated etc.)
+
+					
+4)get status of played content
+send the time and details
+
+String Recieved:	4
+String Sent:		4;time 	(if media is time based)
+					4;0		(if media is not time based)
+
+
+
+5)Terminate Content playing on device
+terminate the content being played (it has been captured to phone)
+
+String Recieved:	5
+String Sent:		5
+
+6)Terminate Recognition Mode
+String Recieved:	6
+String Sent:		6
+
+7) Fake Transfer
+String Recieved:	7;filepath
+String Sent:		7
+
+In case of failure to recognize command, String Sent: 0
